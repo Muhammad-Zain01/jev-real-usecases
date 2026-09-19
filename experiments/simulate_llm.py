@@ -33,6 +33,7 @@ DEFAULT_VOCABULARY = (
     " afternoon",
     " evening",
     " there",
+    " feeling",
     " nice",
     " to",
     " meet",
