@@ -2,3 +2,4 @@ typesafe-sdk
 gradio
 pypdf
 python-docx
+python-dotenv
