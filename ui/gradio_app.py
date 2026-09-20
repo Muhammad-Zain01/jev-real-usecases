@@ -1,6 +1,7 @@
 """Gradio UI for trying the registered Jev use cases."""
 
 import os
+from collections.abc import Mapping
 from pathlib import Path
 from typing import Any
 
@@ -12,19 +13,27 @@ from use_cases import UseCaseInput
 from use_cases.registry import get_use_case
 
 
+def _json_safe(value: Any) -> Any:
+    """Make nested Jev/Pydantic values safe for Gradio's JSON component."""
+    if hasattr(value, "model_dump"):
+        return _json_safe(value.model_dump())
+    if isinstance(value, Mapping):
+        # Score probabilities can use integer labels; Gradio JSON requires strings.
+        return {str(key): _json_safe(item) for key, item in value.items()}
+    if isinstance(value, (list, tuple)):
+        return [_json_safe(item) for item in value]
+    return value
+
+
 def _serialize_result(result: Any) -> dict[str, Any]:
     """Convert the shared result object into JSON for the Gradio output."""
-    answers = {
-        name: answer.model_dump() if hasattr(answer, "model_dump") else answer
-        for name, answer in result.answers.items()
-    }
     usage = result.response.usage
-    return {
+    return _json_safe({
         "use_case": result.name,
         "model": result.response.model,
-        "answers": answers,
-        "usage": usage.model_dump() if hasattr(usage, "model_dump") else usage,
-    }
+        "answers": result.answers,
+        "usage": usage,
+    })
 
 
 def _run_use_case(use_case_id: str, data: dict[str, Any]) -> dict[str, Any]:

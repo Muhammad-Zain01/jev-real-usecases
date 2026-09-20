@@ -4,7 +4,9 @@ from collections.abc import Mapping
 from typing import Any
 
 from typesafe_sdk import TypeSafeClient
+from dotenv import load_dotenv
 
+load_dotenv()
 
 class JevInference:
     """One reusable Jev client shared by the application and use cases."""
