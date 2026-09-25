@@ -20,6 +20,18 @@ prompt_safety_gate = _load("use_cases.prompt_safety_gate.run")
 support_next_action = _load("use_cases.support_next_action.run")
 invoice_triage = _load("use_cases.invoice_triage.run")
 security_incident_triage = _load("use_cases.security_incident_triage.run")
+email_triage = _load("use_cases.email_triage.run")
+product_feedback_triage = _load("use_cases.product_feedback_triage.run")
+operations_event_router = _load("use_cases.operations_event_router.run")
+document_intake_router = _load("use_cases.document_intake_router.run")
+workflow_failure_triage = _load("use_cases.workflow_failure_triage.run")
+language_locale_router = _load("use_cases.language_locale_router.run")
+sla_breach_prioritizer = _load("use_cases.sla_breach_prioritizer.run")
+complaint_escalation = _load("use_cases.complaint_escalation.run")
+infrastructure_change_review = _load("use_cases.infrastructure_change_review.run")
+data_quality_triage = _load("use_cases.data_quality_triage.run")
+duplicate_case_review = _load("use_cases.duplicate_case_review.run")
+reviewer_queue_assignment = _load("use_cases.reviewer_queue_assignment.run")
 
 
 USE_CASES = {
@@ -35,6 +47,18 @@ USE_CASES = {
     support_next_action.SPEC.id: support_next_action,
     invoice_triage.SPEC.id: invoice_triage,
     security_incident_triage.SPEC.id: security_incident_triage,
+    email_triage.SPEC.id: email_triage,
+    product_feedback_triage.SPEC.id: product_feedback_triage,
+    operations_event_router.SPEC.id: operations_event_router,
+    document_intake_router.SPEC.id: document_intake_router,
+    workflow_failure_triage.SPEC.id: workflow_failure_triage,
+    language_locale_router.SPEC.id: language_locale_router,
+    sla_breach_prioritizer.SPEC.id: sla_breach_prioritizer,
+    complaint_escalation.SPEC.id: complaint_escalation,
+    infrastructure_change_review.SPEC.id: infrastructure_change_review,
+    data_quality_triage.SPEC.id: data_quality_triage,
+    duplicate_case_review.SPEC.id: duplicate_case_review,
+    reviewer_queue_assignment.SPEC.id: reviewer_queue_assignment,
 }
 
 

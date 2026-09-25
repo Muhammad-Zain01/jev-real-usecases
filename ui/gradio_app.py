@@ -70,7 +70,7 @@ def _run_from_form(use_case_id: str, data: dict[str, Any]) -> dict[str, Any]:
 with gr.Blocks(title="Jev Real Use Cases") as demo:
     gr.Markdown("# Jev Real Use Cases\nChoose a use case and test it with Jev.")
 
-    use_case_selector = gr.Radio(
+    use_case_selector = gr.Dropdown(
         choices=[
             ("Support Ticket Routing", "support_routing"),
             ("Resume Parsing", "resume_parsing"),
@@ -84,6 +84,18 @@ with gr.Blocks(title="Jev Real Use Cases") as demo:
             ("Support Next Action", "support_next_action"),
             ("Invoice Processing Triage", "invoice_triage"),
             ("Security Incident Triage", "security_incident_triage"),
+            ("Email Triage", "email_triage"),
+            ("Product Feedback Triage", "product_feedback_triage"),
+            ("Operations Event Router", "operations_event_router"),
+            ("Document Intake Router", "document_intake_router"),
+            ("Workflow Failure Triage", "workflow_failure_triage"),
+            ("Language and Locale Router", "language_locale_router"),
+            ("SLA Breach Prioritizer", "sla_breach_prioritizer"),
+            ("Complaint Escalation Review", "complaint_escalation"),
+            ("Infrastructure Change Risk Review", "infrastructure_change_review"),
+            ("Data Quality Issue Triage", "data_quality_triage"),
+            ("Duplicate Case Review", "duplicate_case_review"),
+            ("Human Review Queue Assignment", "reviewer_queue_assignment"),
         ],
         value="support_routing",
         label="Choose a use case",

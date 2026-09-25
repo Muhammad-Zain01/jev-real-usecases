@@ -24,7 +24,7 @@ set +a
 python run_ui.py
 ```
 
-The UI includes these example workflows:
+The UI currently includes 24 example workflows:
 
 - Support ticket routing
 - Resume parsing for TXT, PDF, and DOCX files
@@ -33,6 +33,12 @@ The UI includes these example workflows:
 - RAG retrieval reranking and prompt-safety screening
 - Agent trace review and support next-action recommendations
 - Invoice and security incident triage
+- Email and product feedback triage
+- Operations event and document intake routing
+- Workflow failure triage and language routing
+- SLA prioritization and complaint escalation
+- Infrastructure change and data quality review
+- Duplicate case and human reviewer assignment
 
 Uploaded files are converted to text before they are sent to Jev. Each use
 case lives in its own folder with a common `run.py` file. Every `run.py`
