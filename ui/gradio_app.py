@@ -71,7 +71,20 @@ with gr.Blocks(title="Jev Real Use Cases") as demo:
     gr.Markdown("# Jev Real Use Cases\nChoose a use case and test it with Jev.")
 
     use_case_selector = gr.Radio(
-        choices=[("Support Ticket Routing", "support_routing"), ("Resume Parsing", "resume_parsing")],
+        choices=[
+            ("Support Ticket Routing", "support_routing"),
+            ("Resume Parsing", "resume_parsing"),
+            ("Query Preprocessor", "query_preprocessor"),
+            ("Agent Router", "agent_router"),
+            ("Tool Selection and Policy Gate", "tool_policy_gate"),
+            ("Model and Effort Router", "model_effort_router"),
+            ("RAG Retrieval Reranker", "rag_reranker"),
+            ("Agent Trace Reviewer", "agent_trace_reviewer"),
+            ("Prompt Injection and Safety Gate", "prompt_safety_gate"),
+            ("Support Next Action", "support_next_action"),
+            ("Invoice Processing Triage", "invoice_triage"),
+            ("Security Incident Triage", "security_incident_triage"),
+        ],
         value="support_routing",
         label="Choose a use case",
     )

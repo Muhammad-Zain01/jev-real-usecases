@@ -24,12 +24,19 @@ set +a
 python run_ui.py
 ```
 
-The UI currently includes:
+The UI includes these example workflows:
 
 - Support ticket routing
 - Resume parsing for TXT, PDF, and DOCX files
+- Query preprocessing and agent routing
+- Tool policy checks and model-effort routing
+- RAG retrieval reranking and prompt-safety screening
+- Agent trace review and support next-action recommendations
+- Invoice and security incident triage
 
 Uploaded files are converted to text before they are sent to Jev. Each use
 case lives in its own folder with a common `run.py` file. Every `run.py`
 exposes a `SPEC` for its form and the same `run(inference, request)` function
-for execution.
+for execution. These examples return decisions or recommendations; application
+code is responsible for enforcing permissions, approval rules, and confidence
+thresholds before taking consequential actions.
